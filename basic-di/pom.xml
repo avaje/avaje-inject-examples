@@ -39,6 +39,13 @@
     </dependency>
 
     <dependency>
+      <groupId>io.avaje</groupId>
+      <artifactId>avaje-inject-test</artifactId>
+      <version>8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
       <groupId>org.avaje.composite</groupId>
       <artifactId>logback</artifactId>
       <version>1.1</version>

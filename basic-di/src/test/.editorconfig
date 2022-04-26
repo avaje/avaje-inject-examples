@@ -1,0 +1,3 @@
+# editorconfig.org
+[*]
+ij_java_do_not_wrap_after_single_annotation = true
