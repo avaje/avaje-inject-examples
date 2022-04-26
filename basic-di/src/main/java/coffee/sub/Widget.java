@@ -1,10 +1,10 @@
 package coffee.sub;
 
+import io.avaje.inject.Component;
 import io.avaje.inject.PostConstruct;
 import io.avaje.inject.PreDestroy;
-import jakarta.inject.Singleton;
 
-@Singleton
+@Component
 public class Widget  {
 
   public void doStuff() {

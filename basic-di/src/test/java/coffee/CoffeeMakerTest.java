@@ -21,7 +21,6 @@ class CoffeeMakerTest {
 
   @Test
   void brew_listByAnnotation() {
-
     try (BeanScope scope = BeanScope.newBuilder().build()) {
 
       CoffeeMaker maker = scope.get(CoffeeMaker.class);
@@ -34,7 +33,6 @@ class CoffeeMakerTest {
 
   @Test
   void testWith_mocksAndSpy() {
-
     try (BeanScope scope = BeanScope.newBuilder()
       .forTesting()
       .withMock(Heater.class)
