@@ -1,4 +1,4 @@
-package org.foo.myapp.config;
+package org.foo.myapp.data;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
@@ -19,7 +19,7 @@ class MyDynamoClient implements DataApi {
   final AmazonDynamoDB dynamoDB;
 
   @Inject
-  public MyDynamoClient(AmazonDynamoDB dynamoDB) {
+  MyDynamoClient(AmazonDynamoDB dynamoDB) {
     this.dynamoDB = dynamoDB;
   }
 
@@ -36,6 +36,7 @@ class MyDynamoClient implements DataApi {
     dynamoDB.putItem(request);
   }
 
+  @Override
   public DataRecord get(String key) {
     GetItemRequest request = new GetItemRequest();
     request.withTableName("junk");
