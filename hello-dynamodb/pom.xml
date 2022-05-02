@@ -21,7 +21,7 @@
     <dependency>
       <groupId>io.avaje</groupId>
       <artifactId>avaje-inject</artifactId>
-      <version>8.1</version>
+      <version>8.2</version>
     </dependency>
 
     <dependency>
@@ -47,14 +47,14 @@
     <dependency>
       <groupId>io.avaje</groupId>
       <artifactId>avaje-inject-test</artifactId>
-      <version>8.1</version>
+      <version>8.2</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
-      <groupId>org.testcontainers</groupId>
-      <artifactId>testcontainers</artifactId>
-      <version>1.17.1</version>
+      <groupId>io.ebean</groupId>
+      <artifactId>ebean-test-docker</artifactId>
+      <version>5.0</version>
       <scope>test</scope>
     </dependency>
 
@@ -78,7 +78,7 @@
             <path>
               <groupId>io.avaje</groupId>
               <artifactId>avaje-inject-generator</artifactId>
-              <version>8.1</version>
+              <version>8.2</version>
             </path>
           </annotationProcessorPaths>
         </configuration>
