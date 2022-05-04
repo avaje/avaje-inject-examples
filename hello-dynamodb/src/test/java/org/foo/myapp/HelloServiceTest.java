@@ -1,13 +1,11 @@
 package org.foo.myapp;
 
 import jakarta.inject.Inject;
-import org.foo.myapp.BaseTest;
-import org.foo.myapp.HelloService;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class HelloServiceTest extends BaseTest {
+class HelloServiceTest extends BaseComponentTest {
 
     @Inject HelloService hello;
 

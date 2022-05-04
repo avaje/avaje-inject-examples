@@ -8,7 +8,7 @@ import org.mockito.Mock;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-class HelloServiceMockDataTest extends BaseTest {
+class HelloServiceMockDataTest extends BaseComponentTest {
 
   @Mock HelloData data;
   @Inject HelloService hello;

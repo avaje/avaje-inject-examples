@@ -1,14 +1,11 @@
 package org.foo.myapp;
 
 import jakarta.inject.Inject;
-import org.foo.myapp.DataApi;
-import org.foo.myapp.DataRecord;
-import org.foo.myapp.BaseTest;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class DataApiComponentTest extends BaseTest {
+class DataApiComponentTest extends BaseComponentTest {
 
   @Inject DataApi data;
 

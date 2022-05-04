@@ -6,7 +6,6 @@ import io.avaje.inject.Bean;
 import io.avaje.inject.Factory;
 import io.avaje.inject.test.TestScope;
 import io.ebean.docker.commands.LocalstackContainer;
-import jakarta.inject.Named;
 import org.foo.myapp.HelloData;
 
 import java.util.List;
@@ -18,11 +17,12 @@ import java.util.List;
 @Factory
 class MyTestConfiguration {
 
-  @Named("dynamoContainer")
   @Bean
-  LocalstackContainer dynamoDBContainer() {
+  LocalstackContainer localstackContainer() {
     LocalstackContainer container = LocalstackContainer
       .newBuilder("1.13.2")
+      .services("dynamodb")
+      // .awsRegion("ap-southeast-2")
       // .port(4566)
       .build();
     container.start();
@@ -30,10 +30,10 @@ class MyTestConfiguration {
   }
 
   @Bean
-  AmazonDynamoDB dynamoDB(LocalstackContainer dynamoDBContainer) {
-    AmazonDynamoDB client = dynamoDBContainer.dynamoDB();
-    createTable(client);
-    return client;
+  AmazonDynamoDB dynamoDB(LocalstackContainer container) {
+    AmazonDynamoDB dynamoDB = container.dynamoDB();
+    createTable(dynamoDB);
+    return dynamoDB;
   }
 
   void createTable(AmazonDynamoDB client) {
