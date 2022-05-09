@@ -3,6 +3,11 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+<!--  <parent>-->
+<!--    <groupId>org.avaje</groupId>-->
+<!--    <artifactId>java11-oss</artifactId>-->
+<!--    <version>3.8</version>-->
+<!--  </parent>-->
 
   <groupId>org.example</groupId>
   <artifactId>hello-dynamodb</artifactId>
@@ -10,6 +15,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+<!--    <java.release>17</java.release>-->
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
     <maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
@@ -27,7 +33,7 @@
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-dynamodb</artifactId>
-      <version>1.12.206</version>
+      <version>1.12.213</version>
     </dependency>
 
     <!-- required for aws-java-sdk-dynamodb -->
@@ -69,6 +75,12 @@
 
   <build>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${maven-surefire-plugin.version}</version>
+      </plugin>
+
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
