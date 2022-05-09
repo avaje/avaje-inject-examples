@@ -1,9 +1,9 @@
 package org.foo.myapp;
 
-import io.avaje.inject.test.InjectExtension;
-import org.junit.jupiter.api.extension.ExtendWith;
+import io.avaje.inject.test.InjectTest;
 
-@ExtendWith(InjectExtension.class)
+@InjectTest
+//@ExtendWith(InjectExtension.class)
 public abstract class BaseComponentTest {
 
 }

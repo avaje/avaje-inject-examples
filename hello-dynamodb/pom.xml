@@ -21,13 +21,13 @@
     <dependency>
       <groupId>io.avaje</groupId>
       <artifactId>avaje-inject</artifactId>
-      <version>8.2</version>
+      <version>8.3</version>
     </dependency>
 
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-dynamodb</artifactId>
-      <version>1.12.205</version>
+      <version>1.12.206</version>
     </dependency>
 
     <!-- required for aws-java-sdk-dynamodb -->
@@ -47,14 +47,14 @@
     <dependency>
       <groupId>io.avaje</groupId>
       <artifactId>avaje-inject-test</artifactId>
-      <version>8.2</version>
+      <version>8.3</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>io.ebean</groupId>
       <artifactId>ebean-test-docker</artifactId>
-      <version>5.0</version>
+      <version>5.1</version>
       <scope>test</scope>
     </dependency>
 
@@ -78,7 +78,7 @@
             <path>
               <groupId>io.avaje</groupId>
               <artifactId>avaje-inject-generator</artifactId>
-              <version>8.2</version>
+              <version>8.3</version>
             </path>
           </annotationProcessorPaths>
         </configuration>

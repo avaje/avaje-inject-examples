@@ -1,10 +1,7 @@
 package org.foo.myapp.data;
 
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
-import com.amazonaws.services.dynamodbv2.model.AttributeValue;
-import com.amazonaws.services.dynamodbv2.model.GetItemRequest;
-import com.amazonaws.services.dynamodbv2.model.GetItemResult;
-import com.amazonaws.services.dynamodbv2.model.PutItemRequest;
+import com.amazonaws.services.dynamodbv2.model.*;
 import jakarta.inject.Inject;
 import jakarta.inject.Singleton;
 import org.foo.myapp.DataApi;
@@ -21,6 +18,17 @@ class MyDynamoClient implements DataApi {
   @Inject
   MyDynamoClient(AmazonDynamoDB dynamoDB) {
     this.dynamoDB = dynamoDB;
+  }
+
+  @Override
+  public void delete(String key1) {
+    Map<String, AttributeValue> attr = new LinkedHashMap<>();
+    attr.put("key", new AttributeValue(key1));
+
+    DeleteItemRequest request = new DeleteItemRequest();
+    request.withTableName("junk");
+    request.setKey(attr);
+    dynamoDB.deleteItem(request);
   }
 
   @Override

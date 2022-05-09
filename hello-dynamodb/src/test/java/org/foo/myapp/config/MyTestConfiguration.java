@@ -20,7 +20,7 @@ class MyTestConfiguration {
   @Bean
   LocalstackContainer localstackContainer() {
     LocalstackContainer container = LocalstackContainer
-      .newBuilder("1.13.2")
+      .builder("1.13.2")
       .services("dynamodb")
       // .awsRegion("ap-southeast-2")
       // .port(4566)
