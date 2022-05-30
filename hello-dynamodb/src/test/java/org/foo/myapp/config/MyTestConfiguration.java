@@ -5,7 +5,7 @@ import com.amazonaws.services.dynamodbv2.model.*;
 import io.avaje.inject.Bean;
 import io.avaje.inject.Factory;
 import io.avaje.inject.test.TestScope;
-import io.ebean.docker.commands.LocalstackContainer;
+import io.ebean.test.containers.LocalstackContainer;
 import org.foo.myapp.HelloData;
 
 import java.util.List;
@@ -20,8 +20,9 @@ class MyTestConfiguration {
   @Bean
   LocalstackContainer localstackContainer() {
     LocalstackContainer container = LocalstackContainer
-      .builder("1.13.2")
+      .builder("0.14.2")
       .services("dynamodb")
+      // .containerName("ut_localstack")
       // .awsRegion("ap-southeast-2")
       // .port(4566)
       .build();
